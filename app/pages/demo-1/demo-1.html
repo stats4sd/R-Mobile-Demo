@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Demo 1
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="demo-1">
+  <div>Use the R Stats package to calculate statistics based on input</div>
+  <ion-list>
+    <ion-item>
+      <ion-label>Values</ion-label>
+      <ion-input type="text" [(ngModel)]="numberList"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Method</ion-label>
+      <ion-select [(ngModel)]="statistic">
+        <ion-option value="sd">sd</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div>Type a list of comma seperated numbers</div>
+
+  {{numberList}}
+</ion-content>
