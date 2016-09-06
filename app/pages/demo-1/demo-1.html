@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content padding class="demo-1">
-  <div>Use the R Stats package to calculate statistics based on input</div>
+  <div>Use the R Stats package to remotely calculate statistics based on input</div>
   <ion-list>
     <ion-item>
       <ion-label>Values</ion-label>
@@ -16,11 +16,14 @@
     <ion-item>
       <ion-label>Method</ion-label>
       <ion-select [(ngModel)]="statistic">
-        <ion-option value="sd">sd</ion-option>
+          <ion-option *ngFor="let method of statMethods">{{method}}</ion-option>
       </ion-select>
     </ion-item>
+    <ion-item>
+      <button danger (click)="calculate()">Calculate</button>
+    </ion-item>
   </ion-list>
-  <div>Type a list of comma seperated numbers</div>
 
-  {{numberList}}
+  <div id="output" padding>{{output}}</div>
+
 </ion-content>
